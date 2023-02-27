@@ -25,6 +25,7 @@ uint64_t nextPrime(uint64_t value) {
     if (checkPrime(g))
       return g;
   }
+  return 0;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
