@@ -4,17 +4,35 @@
 
 
 bool checkPrime(uint64_t value) {
-// вставьте код функции
+  for (int i = 2; i <= sqrt(value); i++) {
+    if (value % i == 0)
+      return False;
+  }
+  return True;
 }
 
 uint64_t nPrime(uint64_t n) {
-// вставьте код функции
+  int k = 0;
+  for (int j = 1; j <= n; j++) {
+    if (checkPrime(j))
+      k += 1;
+  }
+  return k;
 }
 
 uint64_t nextPrime(uint64_t value) {
-// вставьте код функции
+  for (int g = value+1; g < (value * value); g++) {
+    if (checkPrime(g))
+      return g;
+  }
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-// вставьте код функции
+  int summi = 0;
+  for (int h = 2; h <= hbound; h++){
+    if (checkPrime(h)) {
+      summi += h;
+    }
+  }
+  return summi;
 }
