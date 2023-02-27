@@ -4,11 +4,11 @@
 
 
 bool checkPrime(uint64_t value) {
-  for (int i = 2; i <= sqrt(value); i++) {
+  for (int i = 2; i * i <= value; i++) {
     if (value % i == 0)
-      return False;
+      return false;
   }
-  return True;
+  return true;
 }
 
 uint64_t nPrime(uint64_t n) {
@@ -21,7 +21,7 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-  for (int g = value+1; g < (value * value); g++) {
+  for (int g = value + 1; g < (value * value); g++) {
     if (checkPrime(g))
       return g;
   }
@@ -29,7 +29,7 @@ uint64_t nextPrime(uint64_t value) {
 
 uint64_t sumPrime(uint64_t hbound) {
   int summi = 0;
-  for (int h = 2; h <= hbound; h++){
+  for (int h = 2; h <= hbound; h++) {
     if (checkPrime(h)) {
       summi += h;
     }
